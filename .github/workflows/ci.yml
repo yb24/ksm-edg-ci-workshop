@@ -41,14 +41,14 @@ jobs:
           source-folder: source
 
       # TASK 2 - Run all tests in the repository using run-build action
-      # - name: Run all tests using buildtool
-      #   uses: matlab-actions/run-build@v2
-      #   with:
-      #     tasks: ??
+      - name: Run all tests using buildtool
+        uses: matlab-actions/run-build@v2
+        with:
+          tasks: test
 
-      # - name: Upload test results
-      #   uses: actions/upload-artifact@v4
-      #   if: always()
-      #   with:
-      #     name: test-results
-      #     path: test-results/results.xml
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: test-results/results.xml
